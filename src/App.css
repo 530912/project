@@ -1,0 +1,601 @@
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 90px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 50px;
+
+  color: white;
+
+  z-index: 10;
+}
+
+.menu-button,
+.account-button {
+  border: none;
+  background: none;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+.menu-button {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  font-size: 15px;
+}
+
+.account-button {
+  font-size: 22px;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  font-size: 25px;
+  font-weight: bold;
+
+  letter-spacing: 4px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+  position: relative;
+
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  align-items: flex-end;
+
+  padding: 80px 60px;
+
+  background-color: #222;
+
+  background-image: url("/images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.hero-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0.05)
+  );
+}
+
+.hero-content {
+  position: relative;
+
+  color: white;
+
+  z-index: 2;
+}
+
+.hero-subtitle {
+  margin-bottom: 12px;
+
+  font-size: 18px;
+}
+
+.hero-content h1 {
+  margin-bottom: 30px;
+
+  font-size: 54px;
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+.hero-button {
+  padding: 14px 25px;
+
+  border: 1px solid white;
+  border-radius: 4px;
+
+  background: white;
+
+  color: black;
+
+  cursor: pointer;
+}/* =========================
+   MODELS
+========================= */
+
+.models {
+  width: 100%;
+  padding: 100px 50px 120px;
+
+  background-color: white;
+}
+
+.models h2 {
+  margin-bottom: 50px;
+
+  font-size: 48px;
+  font-weight: 500;
+
+  line-height: 1.1;
+}
+
+
+/* =========================
+   MODEL GRID
+========================= */
+
+.model-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================
+   MODEL CARD
+========================= */
+
+.model-card {
+  position: relative;
+
+  width: 100%;
+  height: 560px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background-color: #111;
+}
+
+
+/* 자동차 이미지 */
+
+.model-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+
+/* 이미지 위 어두운 그라데이션 */
+
+.model-card::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.65),
+    rgba(0, 0, 0, 0) 60%
+  );
+}
+
+
+/* 카드 안의 글 */
+
+.model-info {
+  position: absolute;
+
+  left: 32px;
+  right: 32px;
+  bottom: 32px;
+
+  color: white;
+
+  z-index: 2;
+}
+
+.model-info h3 {
+  margin-bottom: 8px;
+
+  font-size: 38px;
+  font-weight: 500;
+}
+
+.model-info p {
+  margin-bottom: 20px;
+
+  font-size: 16px;
+}
+
+
+/* Discover 버튼 */
+
+.model-info button {
+  padding: 13px 22px;
+
+  border: 1px solid white;
+  border-radius: 4px;
+
+  background-color: white;
+
+  color: black;
+
+  cursor: pointer;
+}
+
+
+/* 카드 마우스 호버 */
+
+.model-card:hover .model-image {
+  transform: scale(1.03);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+  .models {
+    padding: 70px 20px;
+  }
+
+  .models h2 {
+    font-size: 36px;
+  }
+
+  .model-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .model-card {
+    height: 480px;
+  }
+
+}
+/* =========================
+   FINDER
+========================= */
+
+.finder {
+  position: relative;
+
+  height: 650px;
+
+  margin: 0 50px 120px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background-color: #111;
+}
+
+
+/* 배경 이미지 */
+
+.finder-image {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+
+/* 어두운 레이어 */
+
+.finder-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.1) 70%
+  );
+}
+
+
+/* 텍스트 */
+
+.finder-content {
+  position: absolute;
+
+  left: 60px;
+  bottom: 60px;
+
+  max-width: 500px;
+
+  color: white;
+
+  z-index: 2;
+}
+
+
+.finder-label {
+  margin-bottom: 14px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+
+.finder-content h2 {
+  margin-bottom: 18px;
+
+  font-size: 52px;
+  font-weight: 500;
+
+  line-height: 1.05;
+}
+
+
+.finder-description {
+  margin-bottom: 30px;
+
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+
+.finder-button {
+  padding: 14px 24px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: white;
+
+  color: black;
+
+  cursor: pointer;
+
+  transition: background-color 0.2s ease;
+}
+
+
+.finder-button:hover {
+  background-color: #e5e5e5;
+}
+/* =========================
+   DISCOVER
+========================= */
+
+.discover {
+  width: 100%;
+
+  padding: 0 50px 120px;
+
+  background-color: white;
+}
+
+
+.discover h2 {
+  margin-bottom: 40px;
+
+  font-size: 48px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   DISCOVER GRID
+========================= */
+
+.discover-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================
+   DISCOVER CARD
+========================= */
+
+.discover-card {
+  cursor: pointer;
+}
+
+
+.discover-image-wrap {
+  width: 100%;
+  height: 420px;
+
+  overflow: hidden;
+
+  border-radius: 12px;
+
+  background-color: #eeeeee;
+}
+
+
+.discover-image {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.4s ease;
+}
+
+
+.discover-info {
+  padding-top: 22px;
+}
+
+
+.discover-info h3 {
+  margin-bottom: 10px;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+.discover-info p {
+  margin-bottom: 18px;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  color: #555555;
+}
+
+
+.discover-info button {
+  padding: 0;
+
+  border: none;
+
+  background: none;
+
+  font-size: 16px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+/* HOVER */
+
+.discover-card:hover .discover-image {
+  transform: scale(1.04);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  width: 100%;
+
+  padding: 70px 50px 30px;
+
+  background-color: #111111;
+  color: white;
+}
+
+
+/* 상단 */
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 80px;
+
+  padding-bottom: 70px;
+}
+
+
+/* 로고 */
+
+.footer-brand {
+  font-size: 26px;
+  font-weight: 600;
+
+  letter-spacing: 4px;
+}
+
+
+/* 링크 영역 */
+
+.footer-links {
+  display: flex;
+
+  gap: 80px;
+}
+
+
+/* 각 링크 그룹 */
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+}
+
+
+.footer-column h4 {
+  margin-bottom: 8px;
+
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+.footer-column a {
+  color: #cccccc;
+
+  font-size: 14px;
+  text-decoration: none;
+
+  transition: color 0.2s ease;
+}
+
+
+.footer-column a:hover {
+  color: white;
+}
+
+
+/* 아래 copyright */
+
+.footer-bottom {
+  padding-top: 25px;
+
+  border-top: 1px solid #444444;
+}
+
+
+.footer-bottom p {
+  font-size: 13px;
+
+  color: #aaaaaa;
+}
