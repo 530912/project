@@ -1,11 +1,11 @@
 import './App.css'
 
-import Header from './components/header'
-import Hero from './components/hero'
-import Models from './components/models'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import Models from './components/Models'
 import Finder from './components/Finder'
-import Discover from './components/discover'
-import Footer from './components/footer'
+import Discover from './components/Discover'
+import Footer from './components/Footer'
 
 function App() {
 
