@@ -1,4 +1,4 @@
-import ModelCard from "./modelcard";
+import ModelCard from "./ModelCard";
 
 function Models () {
     const cars = [{
