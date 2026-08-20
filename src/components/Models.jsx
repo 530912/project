@@ -34,9 +34,14 @@ return (
         </h2>
         <div className="model-grid">
             {cars.map((car) => (
-                <ModelCard key={car.id} car={car} 
-                />
-            ))}
+    <ModelCard
+        key={car.id}
+        id={car.id}
+        name={car.name}
+        category={car.type}
+        image={car.image}
+    />
+))}
         </div>
     </section>
 )

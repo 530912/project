@@ -1,19 +1,46 @@
-function Header () {
+export default function Header({ onNavigate }) {
     return (
-        <header className="header">
-            <button className="menu-button">
-                <span>☰</span>
-                <span>MENU</span>
-            </button>
+        <header className="main-header">
 
-            <div className="logo">
+            <button
+                className="header-logo"
+                onClick={() => onNavigate("home")}
+            >
                 PORSCHE
-            </div>
-
-            <button className="account-button">
-                ☻
             </button>
+
+            <nav className="header-nav">
+
+                <button
+                    className="header-nav-button"
+                    onClick={() => onNavigate("home")}
+                >
+                    HOME
+                </button>
+
+                <button
+                    className="header-nav-button"
+                    onClick={() => onNavigate("models")}
+                >
+                    MODELS
+                </button>
+
+                <button
+                    className="header-nav-button"
+                    onClick={() => onNavigate("favorites")}
+                >
+                    FAVORITES
+                </button>
+
+                <button 
+                    className="header-nav-button"
+                    onClick={() => onNavigate("signup")}
+                >
+                    ACCOUNT
+                </button>
+
+            </nav>
+
         </header>
-    )
+    );
 }
-export default Header

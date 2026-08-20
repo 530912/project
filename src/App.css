@@ -599,3 +599,425 @@
 
   color: #aaaaaa;
 }
+/* ========================================
+   MODELS PAGE
+======================================== */
+
+.models-page {
+    min-height: 100vh;
+    padding: 140px 5vw 100px;
+    background: #f5f5f5;
+    color: #111;
+}
+
+.models-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 40px;
+
+    margin-bottom: 60px;
+}
+
+.models-page-header h1 {
+    margin: 0;
+
+    font-size: clamp(48px, 7vw, 100px);
+    font-weight: 500;
+    letter-spacing: -0.05em;
+    line-height: 0.9;
+}
+
+
+/* SEARCH */
+
+.models-search {
+    width: 320px;
+    padding: 14px 0;
+
+    border: none;
+    border-bottom: 1px solid #111;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+}
+
+.models-search::placeholder {
+    color: #777;
+}
+
+
+/* MODEL GRID */
+
+.models-page-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+
+/* MODEL CARD */
+
+.model-card {
+    position: relative;
+
+    min-height: 420px;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    background: #fff;
+
+    overflow: hidden;
+}
+
+.model-card-image {
+    width: 100%;
+    height: 260px;
+
+    margin-bottom: 30px;
+
+    overflow: hidden;
+}
+
+.model-card-image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.model-card:hover .model-card-image img {
+    transform: scale(1.03);
+}
+
+
+/* CARD TEXT */
+
+.model-card-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.model-card-category {
+    margin: 0 0 10px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+
+    color: #777;
+}
+
+.model-card-title {
+    margin: 0;
+
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: -0.04em;
+}
+
+.model-card-description {
+    max-width: 420px;
+
+    margin: 14px 0 30px;
+
+    font-size: 14px;
+    line-height: 1.5;
+
+    color: #555;
+}
+
+.model-card-price {
+    margin: auto 0 20px;
+
+    font-size: 14px;
+}
+
+
+/* SAVE BUTTON */
+
+.model-card-save {
+    width: 100%;
+    padding: 15px 20px;
+
+    border: 1px solid #111;
+
+    background: transparent;
+    color: #111;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+.model-card-save:hover {
+    background: #111;
+    color: #fff;
+}
+
+
+/* EMPTY SEARCH RESULT */
+
+.models-empty {
+    grid-column: 1 / -1;
+
+    padding: 100px 0;
+
+    text-align: center;
+    font-size: 14px;
+    color: #777;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .models-page {
+        padding: 110px 20px 60px;
+    }
+
+    .models-page-header {
+        flex-direction: column;
+        align-items: stretch;
+
+        margin-bottom: 40px;
+    }
+
+    .models-search {
+        width: 100%;
+    }
+
+    .models-page-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .model-card {
+        min-height: 360px;
+        padding: 24px;
+    }
+
+    .model-card-title {
+        font-size: 32px;
+    }
+}
+/* ==============================
+   HEADER
+============================== */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+
+    width: 100%;
+    height: 72px;
+    padding: 0 5vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    box-sizing: border-box;
+}
+
+
+/* LOGO */
+
+.header-logo {
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+
+    cursor: pointer;
+}
+
+
+/* NAVIGATION */
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header-nav-button {
+    padding: 0;
+
+    border: none;
+    background: none;
+
+    font-size: 12px;
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+}
+
+.header-nav-button:hover {
+    opacity: 0.5;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .main-header {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .header-nav {
+        gap: 14px;
+    }
+
+    .header-nav-button {
+        font-size: 10px;
+    }
+}
+/* SAVE 버튼 클릭 방해 해결 테스트 */
+
+.model-card {
+    position: relative;
+}
+
+.model-card-content {
+    position: relative;
+    z-index: 10;
+}
+
+.model-card-save {
+    position: relative;
+    z-index: 20;
+    pointer-events: auto;
+}
+
+.model-card::before,
+.model-card::after {
+    pointer-events: none;
+}
+/* =========================
+   SIGN UP PAGE
+========================= */
+
+.signup-page {
+    width: 100%;
+    min-height: 80vh;
+
+    padding: 140px 40px 100px;
+
+    background-color: #ffffff;
+    color: #111111;
+
+    box-sizing: border-box;
+}
+
+.signup-container {
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+}
+
+.signup-container h1 {
+    margin: 0 0 60px;
+
+    color: #111111;
+
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: -1px;
+}
+
+.signup-form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 32px;
+}
+
+.signup-field {
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.signup-field label {
+    color: #111111;
+
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+}
+
+.signup-field input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0;
+
+    border: none;
+    border-bottom: 1px solid #999999;
+
+    background: transparent;
+    color: #111111;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+.signup-field input:focus {
+    border-bottom: 1px solid #111111;
+}
+
+.signup-field input::placeholder {
+    color: #aaaaaa;
+}
+
+.signup-form > button[type="submit"] {
+    width: 100%;
+    height: 52px;
+
+    margin-top: 20px;
+
+    border: none;
+
+    background-color: #111111;
+    color: #ffffff;
+
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+
+    cursor: pointer;
+}
+
+.signup-form > button[type="submit"]:disabled {
+    background-color: #d6d6d6;
+    color: #888888;
+
+    cursor: not-allowed;
+}
